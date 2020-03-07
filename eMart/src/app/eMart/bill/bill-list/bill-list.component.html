@@ -1,0 +1,84 @@
+<div class="container mt-3">
+    <div *ngIf="showBill">
+    <div *ngFor="let bill of allBills">
+        <button type="button" class="btn btn-secondary card-width w-100" data-toggle="collapse" attr.data-target="#demo{{bill.id}} ">
+            <div class="row bg-secondar text-white">
+                <div class="col-3"> {{bill.id}} </div>
+                <div class="col-5"> Date: {{bill.date}}</div>
+                <div class="col-4"> Rs.{{bill.amount}}</div>
+            </div>
+        </button>
+
+        <div id="demo{{bill.id}}" class="collapse">
+            <div classs="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>Bill</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>eMart Services</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        contact us:emart@gamil.com
+                    </div>
+                    <div class="col">
+                        Buyer Name:{{currentBuyer.username}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Date{{currentBuyer.date}}
+                    </div>
+                    <div class="col">
+                        Buyer ID:{{currentBuyer.id}}
+                    </div>
+                </div>
+                <div class="table-responsive m-5">
+                    <table class="table table-striped card-width ">
+                        <table class="table card-width">
+                            <thead>
+                                <tr>
+                                    <th>Item ID</th>
+                                    <th>Particulars</th>
+                                    <th> Quantity</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let billDetails of  bill.allBillDetails">
+                                    <td>{{billDetails.item.id}}</td>
+                                    <td>{{billDetails.item.name}}</td>
+                                    <td>1</td>
+                                    <td> {{billDetails.item.price}}</td>
+                                    <td>Rs{{billDetails.item.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Amount</h5>
+                                    </td>
+                                    <td>Rs{{bill.amount}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table>
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!showBill">
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <span class="display-4 text-danger">Purchase History is Empty!!</span>
+        </div>
+    </div>
+</div>
+</div>

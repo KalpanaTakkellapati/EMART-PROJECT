@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark nav" style="background-color:black;font-weight: bold;">
+
+    <a class="navbar-brand" href="#">
+              <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple117/v4/f4/62/cb/f462cb02-581d-bc3c-e90a-1ee9653d77ff/source/512x512bb.jpg" alt="Logo" style="width:40px;">
+            </a>
+          <a class="navbar-brand ml-0 text-white" href="#">eMart</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapse-nav-bar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse-nav-bar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" *ngIf="!getLoggedIn()">
+                <a class="nav-link  text-black" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="getLoggedIn()">
+                <a class="nav-link  text-black" routerLink="/item-list">Item List</a>
+            </li>
+            <li class="nav-item" *ngIf="getLoggedIn()">
+                <a class="nav-link  text-black" routerLink="/cart-list">Cart</a>
+            </li>
+            <li class="nav-item" *ngIf="getLoggedIn()">
+                <a class="nav-link  text-black" routerLink="/bill-list">Purchase history</a>
+            </li>
+            <li class="nav-item" *ngIf="getLoggedIn()">
+                <a class="nav-link  text-black" routerLink="/login">Logout</a>
+            </li>
+        </ul>
+    </div>
+  </nav>

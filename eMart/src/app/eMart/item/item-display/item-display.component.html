@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="row border">
+
+        <div class="col-6">
+
+            <div class="w-50 mx-2 my-3">
+
+                <img class="card-img-top img-size height=50px "
+                 [src]="item?.image"
+                  [alt]="item?.name" />
+            </div>
+        </div>
+
+        <div class="col-6">
+
+            <div class="w-100 mx-2 my-3">
+
+                <h3>{{item?.name}}</h3>
+                <h4>price{{item?.price}}</h4>
+
+                <h4>Description:{{item?.description}}</h4>
+                <h4>Stock:{{item?.stock}}</h4>
+                <h4>remarks:{{item?.remarks}}</h4>
+
+
+
+                <button type="button" class="btn btn-success"
+                (click)="addTocart(item)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
